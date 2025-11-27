@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPL Logos Layout</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #0d1e30, #193c5e, #3780ca, #1e88e5);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    color: white;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Top row container for all logos */
+  .top-row {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* left row at start, right row at end */
+  }
+
+  /* Left logos */
+  .logo-left {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* spacing between logos */
+  }
+
+  .logo-left img {
+    width: 50px;
+    height: auto;
+  }
+
+  /* Center IPL logo */
+  .logo-center {
+    width: 60px;
+    height: 60px;
+    transform-style: preserve-3d;
+    animation: rotateY 3s linear infinite;
+  }
+
+  @keyframes rotateY {
+    0%   { transform: rotateY(0deg); }
+    50%  { transform: rotateY(180deg) scaleX(-1); }
+    100% { transform: rotateY(360deg); }
+  }
+
+  /* Right logos */
+  .logo-right {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .logo-right img {
+    width: 50px;
+    height: auto;
+  }
+
+  /* Marquee */
+  .marquee-container {
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .marquee-text {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: marquee 12s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Top row: left logos, IPL center, right logos -->
+<div class="top-row">
+  <!-- Left logos -->
+  <div class="logo-left">
+    <img src="RCB.png" alt="RCB Logo">
+    <img src="CSK.png" alt="CSK Logo">
+    <img src="RR.png" alt="RR Logo">
+    <img src="MI.png" alt="MI Logo">
+    <img src="Punjab.png" alt="Punjab Logo">
+    <img src="Lucknow.png" alt="Lucknow Logo">
+  </div>
+
+  <!-- IPL logo center -->
+  <img src="IPL-Logo-PNG.png" alt="IPL Logo" class="logo-center">
+
+  <!-- Right logos -->
+  <div class="logo-right">
+    <img src="GT.png" alt="GT Logo">
+    <img src="DC.png" alt="DC Logo">
+    <img src="Delhi.png" alt="Delhi Logo">
+    <img src="Hyderabad.png" alt="Hyderabad Logo">
+  </div>
+</div>
+
+<!-- Marquee -->
+<div class="marquee-container">
+  <div class="marquee-text">IPL - Indian Premier League 2025</div>
+</div>
+
+</body>
+</html>
